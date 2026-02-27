@@ -15,8 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
+from main.views import logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('', include('main.urls')),
+    path('Data/', include('Dadus.urls'))
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "SISTEMA MANAJEMENTU ASSETS MDRHC - SUPER USER"
+admin.site.site_title = "SISTEMA MANAJEMENTU ASSETS MDRHC - SUPER USER"
+admin.site.index_title = "Portal Super User"
+

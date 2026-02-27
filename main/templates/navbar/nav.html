@@ -1,0 +1,29 @@
+{% load static %}
+<header>
+<nav class="navbar navbar-expand top-navbar fixed-top">
+    <button class="btn btn-sm text-white" id="toggleSidebar">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <a class="navbar-brand ml-3 text-white d-flex align-items-center" href="#">
+        <img src="{% static 'Image/MDHRC.png' %}" class="mr-2">
+        <strong>MDRHC-AMS</strong>
+    </a>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user-circle"></i>
+                {{ request.user.username|upper }}|{{request.user.groups.first}}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Account</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">
+                    <i class="fa fa-sign-out"></i> Logout
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+</header>

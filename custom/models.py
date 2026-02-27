@@ -76,6 +76,7 @@ class Pozisaun(models.Model):
 	
 	class Meta:
 		verbose_name_plural='02-Dadus_Custom_Pozisaun'
+		
 
 class Kategoria(models.Model):
 	name = models.CharField(max_length=200, null=True, blank=True)

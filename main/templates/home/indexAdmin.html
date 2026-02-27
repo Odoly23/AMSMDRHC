@@ -1,0 +1,34 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-1">
+    <div class="card border-0 shadow-lg rounded-4 text-center p-5">
+
+        <h2 class="fw-bold text-primary">
+            Welcome to
+        </h2>
+
+        <h3 class="fw-semibold">
+            Assets Management System
+        </h3>
+
+        <p class="text-muted ">
+            Ministério do Desenvolvimento Rural e Habitação Comunitária <br>
+            Timor-Leste
+        </p>
+
+        <h1 class="display-5 fw-bold text-dark mb-4">
+            MDRHC-TL
+        </h1>
+
+        <img src="{% static 'Image/MDHRC.png' %}" 
+             class="img-fluid mx-auto d-block" 
+             style="max-height: 200px;"
+             alt="MDRHC Logo">
+
+    </div>
+</section>
+
+{% endblock %}

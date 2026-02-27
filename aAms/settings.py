@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -47,9 +47,11 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'Dadus.apps.DadusConfig',
     'import_export',
-    'crispy_forms',
+    "crispy_forms",
+    "crispy_bootstrap4",
     'django_summernote',
     'rest_framework',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -138,11 +140,12 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-#LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
 
-#LOGIN_URL = 'login'
+LOGIN_URL = 'login'
 
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: "/users/users/",
@@ -178,3 +181,5 @@ MESSAGE_TAGS = {message_constants.DEBUG: 'debug',
         message_constants.SUCCESS: 'success',
         message_constants.WARNING: 'warning',
         message_constants.ERROR: 'danger',}
+
+

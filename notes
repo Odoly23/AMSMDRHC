@@ -1,0 +1,42 @@
+Sistem ini harus bisa:
+
+Mengelola aset kantor pusat & distrik
+
+Tracking lokasi aset
+
+Tracking kondisi aset
+
+Tracking peminjaman
+
+Tracking maintenance
+
+Tracking mutasi antar departemen
+
+Audit trail (siapa ubah apa)
+
+Laporan resmi (PDF / Excel)
+
+Role-based access
+
+Ini bukan sistem kecil lagi. Ini level institusi
+
+
+Role:
+
+Super Admin
+
+Admin Asset
+
+Staff
+
+Auditor
+
+Kepala Departemen
+
+Gunakan:
+
+Django User
+
+Group
+
+Permission

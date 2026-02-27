@@ -26,7 +26,8 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
     path('logout/', logout_view, name='logout'),
     path('', include('main.urls')),
-    path('Data/', include('Dadus.urls'))
+    path('Data/', include('Dadus.urls')),
+    path('Relatorio/', include('reports.urls'))
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

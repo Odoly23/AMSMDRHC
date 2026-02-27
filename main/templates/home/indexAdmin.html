@@ -1,34 +1,47 @@
 {% extends "main/layout.html" %}
 {% load static %}
-
 {% block content %}
+        <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+             <ol class="breadcrumb float-sm-left">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">{{title}}</a></li>
+            </ol>
+          </div>
+          <div class="col-sm-6">
+          
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
-<section class="py-1">
-    <div class="card border-0 shadow-lg rounded-4 text-center p-5">
+    <!-- Main content -->
+    <section class="content">
 
-        <h2 class="fw-bold text-primary">
-            Welcome to
-        </h2>
-
-        <h3 class="fw-semibold">
-            Assets Management System
-        </h3>
-
-        <p class="text-muted ">
-            Ministério do Desenvolvimento Rural e Habitação Comunitária <br>
-            Timor-Leste
-        </p>
-
-        <h1 class="display-5 fw-bold text-dark mb-4">
-            MDRHC-TL
-        </h1>
-
-        <img src="{% static 'Image/MDHRC.png' %}" 
-             class="img-fluid mx-auto d-block" 
-             style="max-height: 200px;"
-             alt="MDRHC Logo">
-
-    </div>
-</section>
-
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Default box -->
+            <div class="card rounded shadow-lg">
+              <div class="card-body">
+                <h1 align="center">BEMVINDO</h1>
+                <h5 align="center">MAI-IHA</h5>
+              <h3 align="center">SISTEMA MANAGEMENTO ASSETS<h3>
+               <h5 align="center">  Ministério do Desenvolvimento Rural e Habitação Comunitária<br>
+                Timor-Leste</h5>
+                <h1 align="center"><a href="https://mdrhc.gov.tl/en/">MDRHC-TL</a></h1> <hr>
+                <center>
+                  <img src="{% static 'Image/MDHRC.png'%}" height="50%">
+                              </div>
+                </center>
+        
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
 {% endblock %}

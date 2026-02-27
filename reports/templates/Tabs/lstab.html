@@ -1,0 +1,95 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block content %}
+        <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+             <ol class="breadcrumb float-sm-left">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="#" onclick="self.history.back()">Fila</a></li>
+              <li class="breadcrumb-item"><a href="#">{{title}}</a></li>
+            </ol>
+          </div>
+          <div class="col-sm-6">
+          
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="container-fluid">
+        <div class="row">
+        <div class="col-12">
+            <div class="row">
+                {% for d in dep_dummy %}
+                    <div class="col-3">
+                    <div class="card">
+                        <div class="card-header bg-info text-white text-center"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>    
+        </div>
+          <div class="col-lg-12">
+            <!-- Default box -->
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                    {% for d in objects %}
+                        <div class="col-md-4">
+                            <h5><a href="">{{d.code}}</a></h5>
+                        </div>
+                    {% endfor %}
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm text-center" width="100%">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Tinan</th>
+                                <th colspan="4">Diresaun</th>
+                                <th rowspan="2">Total</th>
+                                <tr>
+                                    <th>DSA</th>
+                                    <th>DSE</th>
+                                    <th>DGE</th>
+                                    <th>DPE</th>
+                                </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2026</td>
+                                <td><a href="">1</a></td>
+                                 <td><a href="">1</a></td>
+                                  <td><a href="">1</a></td>
+                                   <td><a href="">1</a></td>
+                                    <td><a href="">4</a></td>
+                            </tr>
+                             <tr>
+                                <td>2025</td>
+                                <td><a href="">1</a></td>
+                                 <td><a href="">1</a></td>
+                                  <td><a href="">1</a></td>
+                                   <td><a href="">1</a></td>
+                                    <td><a href="">4</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

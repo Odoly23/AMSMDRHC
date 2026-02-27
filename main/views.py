@@ -21,7 +21,7 @@ def home(request):
 def logout_view(request):
     logout(request)          
     request.session.flush() 
-    return redirect('login') 
+    return render(request, 'auth/logout.html') 
 
 
 def error_404(request, exception):

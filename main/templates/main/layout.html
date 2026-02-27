@@ -2,151 +2,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if title %}
+      <title>AMS-MDRHD|{{title}}</title>
+  {% else %}
+    <title>AMS-MDRHD|TL</title>
+  {% endif %}
 
-<title>AMS - MDRHC</title>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<style>
-
-/* ===== COLOR THEME ===== */
-:root {
-    --primary-brown: #A56A52;
-    --primary-green: #2E7D32;
-    --light-bg: #f4f4f4;
-}
-
-/* ===== BODY ===== */
-body {
-    background-color: var(--light-bg);
-    overflow-x: hidden;
-}
-
-/* ===== TOP NAVBAR ===== */
-.top-navbar {
-    background: var(--primary-brown);
-    color: white;
-    height: 60px;
-}
-
-.top-navbar .navbar-brand img {
-    height: 40px;
-    border-radius: 50%;
-}
-
-.top-navbar .nav-link {
-    color: white !important;
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background: var(--primary-green);
-    color: white;
-    transition: all 0.3s;
-    overflow-y: auto;
-}
-
-.sidebar.collapsed {
-    width: 70px;
-}
-
-.sidebar .nav-link {
-    color: white !important;
-}
-
-.sidebar .nav-link:hover {
-    background: rgba(255,255,255,0.1);
-}
-
-/* ===== CONTENT ===== */
-.content-wrapper {
-    margin-top: 60px;
-    margin-left: 250px;
-    padding: 20px;
-    transition: all 0.3s;
-}
-
-.content-wrapper.expanded {
-    margin-left: 70px;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    background: var(--primary-brown);
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-/* ===== CUSTOMIZER BUTTON ===== */
-.customizer-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary-green);
-    color: white;
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .sidebar {
-        left: -250px;
-    }
-    .sidebar.show {
-        left: 0;
-    }
-    .content-wrapper {
-        margin-left: 0;
-    }
-}
-
-</style>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css'%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css'%}">
+  <!-- favicon -->
+  <link rel="icon" href="{% static 'Image/MDHRC.png'%}">
 </head>
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  {% include 'navbar/nav.html' %}
+  <!-- /.navbar -->
 
-<!-- ===== TOP NAVBAR ===== -->
-{% include 'navbar/nav.html' %}
-<!-- ===== SIDEBAR ===== -->
-{% include 'navbar/sidebar.html' %}
-
-<!-- ===== CONTENT ===== -->
-<div class="content-wrapper" id="contentWrapper">
+  <!-- Main Sidebar Container -->
+  {% include 'navbar/sidebar.html' %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
     {% block content %}
-    {% endblock %}
+        
+    {% endblock  %}
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 1.0
+    </div>
+    <strong>Copyright &copy; 2016-{% now "Y" %} <a href="https://mdrhc.gov.tl/en/" target="_blank">MDRHC</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
 </div>
+<!-- ./wrapper -->
 
-<!-- ===== FOOTER ===== -->
-<div class="footer">
-    © 2026 MDRHC Timor-Leste
-</div>
-
-<!-- Floating Customizer -->
-<div class="customizer-btn">
-    <i class="fa fa-cog"></i>
-</div>
-
-<script>
-$("#toggleSidebar").click(function(){
-    $("#sidebar").toggleClass("collapsed");
-    $("#contentWrapper").toggleClass("expanded");
-});
-
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<!-- overlayScrollbars -->
+<script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js'%}"></script>
 
 </body>
 </html>

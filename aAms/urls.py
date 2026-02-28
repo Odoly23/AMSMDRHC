@@ -27,7 +27,8 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('', include('main.urls')),
     path('Data/', include('Dadus.urls')),
-    path('Relatorio/', include('reports.urls'))
+    path('Relatorio/', include('reports.urls')),
+    path('Distribuisaun/', include('distribuition.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

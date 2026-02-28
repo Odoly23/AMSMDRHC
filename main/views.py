@@ -13,7 +13,8 @@ from django.contrib.auth import authenticate,login,logout
 @login_required
 def home(request):
     context = {
-        "title": "Sistema Manajemnto Assets MDRHC",
+        "title": "Sistema Manajemento Assets",
+        'homeActive':"active",
     }
     return render(request, 'home/indexAdmin.html', context)
 

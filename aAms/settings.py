@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'aAms.middleware.PreviousURLMiddleware',
+    'aAms.middleware.NoBackAfterLogout',
 ]
 
 ROOT_URLCONF = 'aAms.urls'
@@ -167,10 +168,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 60 * 60
 
@@ -181,7 +180,12 @@ else:
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'onosio_aconceicao@mdrhc.gov.tl'
+EMAIL_HOST_PASSWORD = 'wvfldeoyocqcnmsv'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

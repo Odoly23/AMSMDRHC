@@ -11,9 +11,10 @@ def dash(request):
 	user = request.user
 	object1, object2, object3 = [],[],[]
 	objects = Diresaun.objects.all()
-	dep_dummy = ("DDS", "DGS", "DSA", "DGA")
 	context = {
+		'link_antes': [{'link_name':"d-dash",'link_text':"Dados Distribuisaun"}],
 		'title': 'Sumario Distribuisaun Assets',
-		'legend': 'Sumario Distribuisaun Assets', dep_dummy:'dep_dummy'
+		'legend': 'Sumario Distribuisaun Assets',
+		'dashActive':"active",
 	}
 	return render(request, 'Dash/index.html', context)
